@@ -40,3 +40,21 @@ class TelegramMethod:
             'certificate': certificate,
         }
         return self._req(method_name=method_name, data=data, files=files).json()
+
+    def send_message(self, chat_id, text, parse_mode=None, entities=None, disable_web_page_preview=None,
+                     disable_notification=None, reply_to_message_id=None, allow_sending_without_reply=None,
+                     reply_markup=None):
+        method_name = 'sendMessage'
+        data = {
+            'chat_id': chat_id,
+            'text': text,
+            'parse_mode': parse_mode,
+            'entities': entities,
+            'disable_web_page_preview': disable_web_page_preview,
+            'disable_notification': disable_notification,
+            'reply_to_message_id': reply_to_message_id,
+            'allow_sending_without_reply': allow_sending_without_reply,
+            'reply_markup': reply_markup,
+        }
+        files = {}
+        return self._req(method_name=method_name, data=data, files=files).json()

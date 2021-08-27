@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'webhook.apps.WebhookConfig',
     # Local Packages
     'extensions',
+    'actions',
     # Third-Party Packages
     'rest_framework',
 ]
